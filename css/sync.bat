@@ -1,0 +1,1 @@
+browser-sync start --proxy "localhost/_lab" --files "*.css, ../*.html"
