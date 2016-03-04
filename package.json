@@ -1,7 +1,6 @@
 {
-  "name": "lilamand",
+  "name": "lab",
   "version": "1.0.0",
-  "description": "",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^3.9.0",
@@ -18,5 +17,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CeliaLfd/_lab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CeliaLfd/_lab/issues"
+  },
+  "homepage": "https://github.com/CeliaLfd/_lab#readme",
+  "description": ""
 }

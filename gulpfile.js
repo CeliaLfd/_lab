@@ -16,18 +16,18 @@ gulp.task('styles', function() {
         cascade: false
     }))
     .pipe(gulp.dest('css'))
-    .pipe(browserSync.stream());
+    //.pipe(browserSync.stream());
 });
 
 
 // Static Server + watching scss/html files
 gulp.task('serve', ['styles'], function() {
-    browserSync.init({
+    /*browserSync.init({
         proxy: "localhost/_lab"
-    });
+    });*/
     gulp.watch('sass/*.scss', ['styles']);
-    gulp.watch("css/*.css").on('change', browserSync.reload);
-    gulp.watch("*.html").on('change', browserSync.reload);
+    //gulp.watch("css/*.css").on('change', browserSync.reload);
+    //gulp.watch("*.html").on('change', browserSync.reload);
 });
 
 gulp.task('default', ['serve']);
