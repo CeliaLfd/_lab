@@ -11,13 +11,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/design.css" type="text/css">
 	</head>
-<style>
-.pouet:after {
-	content: '';
-
-}
-
-</style>
 	<body>
 		<header class="header">
 			<div class="header-inner">
@@ -32,110 +25,124 @@
 				</nav>
 			</div>
 		</header>
-	<h2>Test Parallax</h2>
-	<div class="container">
-		<h3 class="pouet" style="width: 250px;">lorem ipsum dolar sit maet bla bla <span style="width: 50px; height: 3px; background: red;"></span></h3>
-	</div>
-		<div class="wrapper-parallax">
-			<div data-speed="10" data-type="background" class="cover-image" style="background-image:url('img/img1.jpg');"></div>
-		</div>
+		<section class="section">
+			<div class="container">
+				<h2>Parallax</h2>
+				<div class="wrapper-parallax">
+					<div data-speed="10" data-type="background" class="cover-image" style="background-image:url('img/img1.jpg');"></div>
+				</div>
+			</div>
+		</section>
 
-		<div class="container">
-			<h2>Test SVG</h2>
-			<svg width="200" height ="200" viewBox="0 0 300 300">
-				<rect width="3000" height="3000" fill="#f5f5f5"></rect>
-				<text  x="0" y="100" font-size="160" font-family="Verdana">
+		<section class="section section-grey">
+			<div class="container">
+				<h2>Test SVG</h2>
+				<svg width="200" height ="200" viewBox="0 0 300 300">
+					<rect width="3000" height="3000" fill="#f5f5f5"></rect>
+					<text  x="0" y="100" font-size="160" font-family="Verdana">
 		    		Étiré
 		  		</text>
-			</svg>
-			<svg id="data-svg" height="200" version="1.1" width="237" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; top: 0.390625px;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs><path fill="none" stroke="red" d="M84.55363804379121,135.57763685879127C75.87037678509951,126.89114055025578,70.5,114.89376416015625,70.5,101.643C70.5,75.132,91.99,53.642,118.5,53.642C125.01,53.642,131.214,54.945,136.875,57.292" stroke-width="16" stroke-opacity="1" style="/* -webkit-tap-highlight-color: rgba(0, 0, 0, 0); */ /* stroke-opacity: 0.55; */"></path><path fill="none" stroke="#0076a5" d="M73.24675764383876,146.8977583473375C61.66425059506297,135.3160932367891,54.5,119.31584240722657,54.5,101.643C54.5,66.295,83.152,37.641999999999996,118.5,37.641999999999996C153.846,37.641999999999996,182.5,66.29499999999999,182.5,101.643C182.5,108.487,181.414,115.077,179.424,121.26" stroke-width="16" stroke-opacity="0.4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); stroke-opacity: 0.4;"></path><path fill="none" stroke="#0076a5" d="M62.279731568625806,157.8527314440372C47.895827769309285,143.4671474299729,39,123.59332006835938,39,101.642C39,79.68799999999999,47.897999999999996,59.812999999999995,62.285,45.425999999999995C76.672,31.04,96.546,22.142,118.5,22.142C140.453,22.142,160.328,31.04,174.715,45.426C189.102,59.812,198,79.688,198,101.642C198,123.59599999999999,189.102,143.471,174.714,157.858" stroke-width="1" stroke-opacity="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); stroke-opacity: 0.5;"></path><rect x="0" y="0" width="237" height="180" r="0" rx="0" ry="0" fill="url(#FA1B90CD-5EE8-41FC-898E-34541BBCC82F)" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect></svg>
-			<br>
-			<div class="wrapper-browser">
-				<svg id="my-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 878">
-				<path fill="#C3B7CE" stroke="#38343B" stroke-width="2" stroke-miterlimit="10" d="M1381,842.488
-	c0,14.09-11.422,25.512-25.512,25.512H192.512C178.422,868,167,856.578,167,842.488V40.512C167,26.422,178.422,15,192.512,15
-	h1162.976c14.09,0,25.512,11.422,25.512,25.512V842.488z"/>
-					<circle class="path" fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#38343B" stroke-width="2" stroke-miterlimit="100" cx="224.794" cy="63.377" r="11.377"/>
-					<circle class="path" fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#38343B" stroke-width="2" stroke-miterlimit="100" cx="264.794" cy="63.377" r="11.377"/>
-					<circle class="path" fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#38343B" stroke-width="2" stroke-miterlimit="100" cx="304.794" cy="63.377" r="11.377"/>
-					<line class="path" fill="none" stroke="#38343B" stroke-width="2" stroke-miterlimit="100" x1="168" y1="109.609" x2="1380" y2="109.609"/>
 				</svg>
-			</div>
-
-			<hr>
-
-			<h2>Test : SVG circle</h2>
-
-			<div class="row">
-				<div class="col-xs-3">
-					<div class="wrapper-data">
-					<div class="cont" data-pct="97">
-						<svg id="svg" width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
-						  <circle class="bg" r="90" cx="100" cy="100" stroke-width="5" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
-						  <circle class="percent" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="565.48"></circle>
-						</svg>
-					</div>
-					<div class="wrapper-number">
-						<span class="number timer" data-to="78">78</span>%
-					</div>
-					</div>
-				</div>
-				<div class="col-xs-3">
-					<div class="wrapper-data">
-					<div class="cont" data-pct="97">
-						<svg id="svg" width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
-						  <circle class="bg" r="90" cx="100" cy="100" stroke-width="5" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
-						  <circle class="percent" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="565.48"></circle>
-						</svg>
-					</div>
-					<div class="wrapper-number">
-						<span class="number timer" data-to="78">78</span>%
-					</div>
-					</div>
-				</div>
-				<div class="col-xs-3">
-					<div class="wrapper-data">
-					<div class="cont" data-pct="97">
-						<svg id="svg" width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
-						  <circle class="bg" r="90" cx="100" cy="100" stroke-width="5" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
-						  <circle class="percent" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="565.48"></circle>
-						</svg>
-					</div>
-					<div class="wrapper-number">
-						<span class="number timer" data-to="78">78</span>%
-					</div>
-					</div>
+				<svg id="data-svg" height="200" version="1.1" width="237" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; top: 0.390625px;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs><path fill="none" stroke="red" d="M84.55363804379121,135.57763685879127C75.87037678509951,126.89114055025578,70.5,114.89376416015625,70.5,101.643C70.5,75.132,91.99,53.642,118.5,53.642C125.01,53.642,131.214,54.945,136.875,57.292" stroke-width="16" stroke-opacity="1" style="/* -webkit-tap-highlight-color: rgba(0, 0, 0, 0); */ /* stroke-opacity: 0.55; */"></path><path fill="none" stroke="#0076a5" d="M73.24675764383876,146.8977583473375C61.66425059506297,135.3160932367891,54.5,119.31584240722657,54.5,101.643C54.5,66.295,83.152,37.641999999999996,118.5,37.641999999999996C153.846,37.641999999999996,182.5,66.29499999999999,182.5,101.643C182.5,108.487,181.414,115.077,179.424,121.26" stroke-width="16" stroke-opacity="0.4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); stroke-opacity: 0.4;"></path><path fill="none" stroke="#0076a5" d="M62.279731568625806,157.8527314440372C47.895827769309285,143.4671474299729,39,123.59332006835938,39,101.642C39,79.68799999999999,47.897999999999996,59.812999999999995,62.285,45.425999999999995C76.672,31.04,96.546,22.142,118.5,22.142C140.453,22.142,160.328,31.04,174.715,45.426C189.102,59.812,198,79.688,198,101.642C198,123.59599999999999,189.102,143.471,174.714,157.858" stroke-width="1" stroke-opacity="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); stroke-opacity: 0.5;"></path><rect x="0" y="0" width="237" height="180" r="0" rx="0" ry="0" fill="url(#FA1B90CD-5EE8-41FC-898E-34541BBCC82F)" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect></svg>
+				<br>
+				<div class="wrapper-browser">
+					<svg id="my-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 878">
+					<path fill="#C3B7CE" stroke="#38343B" stroke-width="2" stroke-miterlimit="10" d="M1381,842.488
+					c0,14.09-11.422,25.512-25.512,25.512H192.512C178.422,868,167,856.578,167,842.488V40.512C167,26.422,178.422,15,192.512,15
+					h1162.976c14.09,0,25.512,11.422,25.512,25.512V842.488z"/>
+						<circle class="path" fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#38343B" stroke-width="2" stroke-miterlimit="100" cx="224.794" cy="63.377" r="11.377"/>
+						<circle class="path" fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#38343B" stroke-width="2" stroke-miterlimit="100" cx="264.794" cy="63.377" r="11.377"/>
+						<circle class="path" fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#38343B" stroke-width="2" stroke-miterlimit="100" cx="304.794" cy="63.377" r="11.377"/>
+						<line class="path" fill="none" stroke="#38343B" stroke-width="2" stroke-miterlimit="100" x1="168" y1="109.609" x2="1380" y2="109.609"/>
+					</svg>
 				</div>
 			</div>
+		</section>
 
-			<hr>
-
-			<h2>Transform CSS3</h2>
-			<div class="wrapper-transform">
-				<div class="item item-1">face 1</div>
-				<div class="item item-2">face 2</div>
+		<section class="section">
+			<div class="container">
+				<h2>Test : SVG circle</h2>
+				<div class="row">
+					<div class="col-xs-3">
+						<div class="wrapper-data">
+						<div class="cont" data-pct="97">
+							<svg id="svg" width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+							  <circle class="bg" r="90" cx="100" cy="100" stroke-width="5" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+							  <circle class="percent" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="565.48"></circle>
+							</svg>
+						</div>
+						<div class="wrapper-number">
+							<span class="number timer" data-to="78">78</span>%
+						</div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="wrapper-data">
+						<div class="cont" data-pct="97">
+							<svg id="svg" width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+							  <circle class="bg" r="90" cx="100" cy="100" stroke-width="5" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+							  <circle class="percent" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="565.48"></circle>
+							</svg>
+						</div>
+						<div class="wrapper-number">
+							<span class="number timer" data-to="78">78</span>%
+						</div>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="wrapper-data">
+						<div class="cont" data-pct="97">
+							<svg id="svg" width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+							  <circle class="bg" r="90" cx="100" cy="100" stroke-width="5" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+							  <circle class="percent" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="565.48"></circle>
+							</svg>
+						</div>
+						<div class="wrapper-number">
+							<span class="number timer" data-to="78">78</span>%
+						</div>
+						</div>
+					</div>
+				</div>
 			</div>
+		</section>
 
-			<hr>
+		<section class="section section-grey">
+				<div class="container">
+					<h2>Transform CSS3</h2>
+					<div class="wrapper-transform">
+						<div class="item item-1">face 1</div>
+						<div class="item item-2">face 2</div>
+					</div>
+				</div>
+		</section>
 
-			<h2>Funny hover</h2>
-			<div class="wrapper-hover">
-				<a href="#" class="btn-arrow">
-					<i class="fa fa-angle-right"></i>
-				</a>
-			</div>
-			<br>
-			<ul class="nav-hover">
-				<li><a href="" data-hover="Lien 1">Lien 1</a></li>
-				<li><a href="" data-hover="Lien 2">Lien 2</a></li>
-			</ul>
-			<br>
-			<ul class="circle-hover">
-				<li></li>
-				<li></li>
-			</ul>
 
-			<hr>
+			<section class="section">
+				<div class="container">
+					<h2>Funny hover</h2>
+					<div class="wrapper-hover">
+						<a href="#" class="btn-arrow">
+							<i class="fa fa-angle-right"></i>
+						</a>
+					</div>
+					<br>
+					<ul class="nav-hover list-unstyled list-inline">
+						<li><a href="" data-hover="Lien 1">Lien 1</a></li>
+						<li><a href="" data-hover="Lien 2">Lien 2</a></li>
+					</ul>
+					<br>
+					<ul class="nav-hover-animation list-unstyled list-inline">
+						<li><a href="" data-hover="Lien 1"><span>Lien 1</span></a></li>
+						<li><a href="" data-hover="Lien 2"><span>Lien 2</span></a></li>
+					</ul>
+					<br>
+					<ul class="circle-hover list-unstyled">
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+			</section>
+
 			<script>
 				var bob = {
 				    prenom : "Bob",
@@ -169,8 +176,5 @@
 				liste();
 
 			</script>
-
-		</div>
-
 	</body>
 </html>
