@@ -3,7 +3,7 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 
 // Include plugins
-var	compass = require('gulp-compass');
+// var	compass = require('gulp-compass');
 var sass = require('gulp-sass');
 var	autoprefixer = require('gulp-autoprefixer');
 
