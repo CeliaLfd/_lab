@@ -23,9 +23,7 @@ gulp.task('styles', function() {
 // Static Server + watching scss/html files
 gulp.task('serve', ['styles'], function() {
     browserSync.init({
-      server: {
-          baseDir: "./"
-      }
+        proxy: "localhost/_lab"
     });
     gulp.watch('sass/*.scss', ['styles']);
     gulp.watch("css/*.css").on('change', browserSync.reload);
