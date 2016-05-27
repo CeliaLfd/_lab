@@ -2,20 +2,38 @@
 	from { opacity:0; }
 	to { opacity:1; }
 }
-@keyframes transform {
-	from { transform: translateY(200px); }
-	to { transform: translateY(0); }
-}
+// @keyframes transform {
+// 	from { transform: translateY(50px); }
+// 	to { transform: translateY(0); }
+// }
 
 body, html {
 	height: 100%;
 }
 body {
 	opacity:0;
-	transform: translateY(200px);
-  animation:fadeIn ease-in 1, transform ease-in-out 1;
+  animation:fadeIn ease-in-out 1;
   animation-fill-mode:forwards;
-  animation-duration:1s, .8s;
+  animation-duration:.8s;
+	.move-up {
+		animation: transform ease-in-out 1, opacity ease-in-out 1;
+		animation-duration: .6s, .9s;
+		animation-fill-mode:forwards;
+		//opacity: 0;
+	}
+	// .header {
+	// 	transform: translateY(50px);
+	// }
+	// .section-parallax {
+	// 	transform: translateY(100px);
+	// }
+	&.open {
+		.move-up {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+
 }
 a, a:hover {
 	text-decoration: none;
@@ -24,6 +42,7 @@ a, a:hover {
 	padding: 40px 0;
 	text-align: center;
 	min-height: 80vh;
+	position: relative;
 	h2 {
 		font-weight: bold;
 		margin-bottom: 40px;
@@ -71,6 +90,25 @@ a, a:hover {
 	padding: 20px 40px;
 }
 
+/* SECTION ANIM SCROLL*/
+
+.section-anim-scroll {
+	transform: translateY(0);
+	.wrapper {
+		position: fixed;
+		padding: 6em 0;
+	}
+	h2 {
+		font-weight: bold;
+		font-size: 80px;
+	}
+	p {
+		font-size: 23px;
+	}
+	.container {
+		width: 50%;
+	}
+}
 
 
 /* PARALLAX BG */

@@ -1,39 +1,76 @@
 $(document).ready(function(){
 
+
 	/* HEADER STICKY */
 
-	var el_html = $('html'),
-			el_body = $('body'),
-			header = $('header');
+	// var el_html = $('html'),
+	// 		el_body = $('body'),
+	// 		header = $('header');
+	//
+	// el_body.addClass('open');
+	// function menuIsStuck () {
+	// 	var wScrollTop = $(window).scrollTop(),
+	// 			classFound = el_html.hasClass('nav-is-stuck'),
+	// 			navHeight = header.height(),
+	// 			scrollValue = 600;
+	//
+	// 	// si le scroll est d'au moins 600 et
+	// 	// la class nav-is-stuck n'existe pas sur HTML
+	//
+	// 	if ( wScrollTop > scrollValue && !classFound) {
+	// 		el_html.addClass('nav-is-stuck');
+	// 		el_body.css('padding-top', navHeight);
+	// 	};
+	//
+	// 	// si le scroll est inférieur à 2 et
+	// 	// la class nav-is-stuck existe
+	//
+	// 	if( wScrollTop < 2 && classFound ) {
+	// 		el_html.removeClass('nav-is-stuck');
+	// 		el_body.css('padding-top', '0');
+	// 	};
+	// }
+	//
+	// function onScrolling () {
+	// 	menuIsStuck();
+	// };
+	// $(window).scroll(function() {
+	// 	onScrolling();
+	// });
 
-	function menuIsStuck () {
-		var wScrollTop = $(window).scrollTop(),
-				classFound = el_html.hasClass('nav-is-stuck'),
-				navHeight = header.height(),
-				scrollValue = 600;
+	/* SCROLL ANIM */
+	var section = $('.section-anim-scroll');
+	var header = $('.section-anim-scroll .wrapper');
+	var headerContainer = $('.section-anim-scroll .container');
+	var range = 300;
+	var range2 = 50;
+	var range3 = 50;
+	var sectionHeight = header.outerHeight();
+	section.css({
+		'height' : sectionHeight + 'px'
+	});
 
-		// si le scroll est d'au moins 600 et
-		// la class nav-is-stuck n'existe pas sur HTML
+	$(window).on('scroll', function () {
 
-		if ( wScrollTop > scrollValue && !classFound) {
-			el_html.addClass('nav-is-stuck');
-			el_body.css('padding-top', navHeight);
-		};
+	    var scrollTop = $(this).scrollTop();
+	    var offset = header.offset().top;
+	    var height = header.outerHeight();
+	    offset = offset + height / 2;
+	    var calc = 1 - (scrollTop / range);
+	    var calctransform = 1 - (scrollTop + offset + range3);
+			var calctransform2 = scrollTop + range2;
+			console.log(offset);
+	    header.css({
+				'opacity' : calc,
+				'transform': 'translateY('+ calctransform +'px)'
+			});
+			headerContainer.css({'transform': 'translateY('+ calctransform2 +'px)'});
+			if ( calc > '1' ) {
+	      header.css({ 'opacity': 1 });
+	    } else if ( calc < '0' ) {
+	      header.css({ 'opacity': 0 });
+	    }
 
-		// si le scroll est inférieur à 2 et
-		// la class nav-is-stuck existe
-
-		if( wScrollTop < 2 && classFound ) {
-			el_html.removeClass('nav-is-stuck');
-			el_body.css('padding-top', '0');
-		};
-	}
-
-	function onScrolling () {
-		menuIsStuck();
-	};
-	$(window).scroll(function() {
-		onScrolling();
 	});
 
 	/* DATA */

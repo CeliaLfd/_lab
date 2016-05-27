@@ -15,19 +15,19 @@ gulp.task('styles', function() {
         browsers: ["last 20 versions", "> 1%", "Firefox > 0", "ie > 8"],
         cascade: false
     }))
-    .pipe(gulp.dest('css'))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest('css'));
+    // .pipe(browserSync.stream());
 });
 
 
 // Static Server + watching scss/html files
 gulp.task('serve', ['styles'], function() {
-    browserSync.init({
-        proxy: "localhost/_lab"
-    });
+    // browserSync.init({
+    //     proxy: "localhost/_lab"
+    // });
     gulp.watch('sass/*.scss', ['styles']);
-    gulp.watch("css/*.css").on('change', browserSync.reload);
-    gulp.watch("*.html").on('change', browserSync.reload);
+    gulp.watch("css/*.css");
+    gulp.watch("*.html");
 });
 
 gulp.task('default', ['serve']);
