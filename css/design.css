@@ -119,18 +119,29 @@ a, a:hover {
 
 /* SECTION ANIM SCROLL*/
 .section-anim-scroll {
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0); }
+  position: static;
+  z-index: initial;
+  margin: 0;
+  padding: 0;
+  border: 0; }
   .section-anim-scroll .wrapper {
     position: fixed;
-    padding: 6em 0; }
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 300px; }
+    .section-anim-scroll .wrapper .container {
+      position: absolute;
+      right: 0;
+      left: 0;
+      height: 300px;
+      padding-top: 100px; }
   .section-anim-scroll h2 {
     font-weight: bold;
-    font-size: 80px; }
-  .section-anim-scroll p {
-    font-size: 23px; }
+    font-size: 80px;
+    text-align: center; }
   .section-anim-scroll .container {
     width: 50%; }
 

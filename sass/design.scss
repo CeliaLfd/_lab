@@ -93,17 +93,31 @@ a, a:hover {
 /* SECTION ANIM SCROLL*/
 
 .section-anim-scroll {
-	transform: translateY(0);
+	position: static;
+	z-index: initial;
+	margin: 0;
+    padding: 0;
+    border: 0;
 	.wrapper {
 		position: fixed;
-		padding: 6em 0;
+		overflow: hidden;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		height: 300px;
+		.container {
+			position: absolute;
+			right: 0;
+			left: 0;
+			height: 300px;
+			padding-top: 100px;
+		}
 	}
 	h2 {
 		font-weight: bold;
 		font-size: 80px;
-	}
-	p {
-		font-size: 23px;
+		text-align: center;
 	}
 	.container {
 		width: 50%;
