@@ -71,7 +71,6 @@ a, a:hover {
 		transform: translateY(0);
 	}
 }
-
 .header {
 	padding: 40px;
 	overflow: hidden;
@@ -90,14 +89,14 @@ a, a:hover {
 	padding: 20px 40px;
 }
 
-/* SECTION ANIM SCROLL*/
+/* SECTION ANIM SCROLL */
 
 .section-anim-scroll {
 	position: static;
 	z-index: initial;
 	margin: 0;
-    padding: 0;
-    border: 0;
+  padding: 0;
+  border: 0;
 	.wrapper {
 		position: fixed;
 		overflow: hidden;

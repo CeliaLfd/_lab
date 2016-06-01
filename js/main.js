@@ -3,40 +3,40 @@ $(document).ready(function(){
 
 	/* HEADER STICKY */
 
-	// var el_html = $('html'),
-	// 		el_body = $('body'),
-	// 		header = $('header');
-	//
-	// el_body.addClass('open');
-	// function menuIsStuck () {
-	// 	var wScrollTop = $(window).scrollTop(),
-	// 			classFound = el_html.hasClass('nav-is-stuck'),
-	// 			navHeight = header.height(),
-	// 			scrollValue = 600;
-	//
-	// 	// si le scroll est d'au moins 600 et
-	// 	// la class nav-is-stuck n'existe pas sur HTML
-	//
-	// 	if ( wScrollTop > scrollValue && !classFound) {
-	// 		el_html.addClass('nav-is-stuck');
-	// 		el_body.css('padding-top', navHeight);
-	// 	};
-	//
-	// 	// si le scroll est inférieur à 2 et
-	// 	// la class nav-is-stuck existe
-	//
-	// 	if( wScrollTop < 2 && classFound ) {
-	// 		el_html.removeClass('nav-is-stuck');
-	// 		el_body.css('padding-top', '0');
-	// 	};
-	// }
-	//
-	// function onScrolling () {
-	// 	menuIsStuck();
-	// };
-	// $(window).scroll(function() {
-	// 	onScrolling();
-	// });
+	var el_html = $('html'),
+			el_body = $('body'),
+			header = $('header');
+
+	el_body.addClass('open');
+	function menuIsStuck () {
+		var wScrollTop = $(window).scrollTop(),
+				classFound = el_html.hasClass('nav-is-stuck'),
+				navHeight = header.height(),
+				scrollValue = 600;
+
+		// si le scroll est d'au moins 600 et
+		// la class nav-is-stuck n'existe pas sur HTML
+
+		if ( wScrollTop > scrollValue && !classFound) {
+			el_html.addClass('nav-is-stuck');
+			el_body.css('padding-top', navHeight);
+		};
+
+		// si le scroll est inférieur à 2 et
+		// la class nav-is-stuck existe
+
+		if( wScrollTop < 2 && classFound ) {
+			el_html.removeClass('nav-is-stuck');
+			el_body.css('padding-top', '0');
+		};
+	}
+
+	function onScrolling () {
+		menuIsStuck();
+	};
+	$(window).scroll(function() {
+		onScrolling();
+	});
 
 	/* SCROLL ANIM */
 	var sectionScroll = $('.section-anim-scroll');
