@@ -39,39 +39,62 @@ $(document).ready(function(){
 	});
 
 	/* SCROLL ANIM */
-	var sectionScroll = $('.section-anim-scroll');
-	var sectionScrollWrapper = $('.section-anim-scroll .wrapper');
-	var sectionScrollContent = $('.section-anim-scroll .container');
+
+	// var sectionScroll = $('.section-anim-scroll');
+	// var sectionScrollWrapper = $('.section-anim-scroll .wrapper');
+	// var sectionScrollContent = $('.section-anim-scroll .container');
+	// 	var range = 300;
+	//var speedParallax = sectionScrollContent.attr('data-speed');
+	//var sectionHeight = sectionScrollContent.outerHeight();
+	// sectionScroll.css({
+	// 	'height' : sectionHeight + 150 + 'px'
+	// });
+	// sectionScrollWrapper.css({
+	// 	'height' : sectionHeight + 150 + 'px'
+	// });
+	// $(window).on('scroll', function () {
+	//
+	// 		var scrollTop = $(this).scrollTop();
+	// 		var calc = 1 - (scrollTop / range);
+	// 		var calctransform = - scrollTop;
+	// 		var calctransform2 = scrollTop * speedParallax;
+	// 		sectionScrollWrapper.css({
+	// 		 	'opacity' : calc,
+	// 			'transform': 'translate3d(0px, '+ calctransform +'px, 0px)'
+	// 		});
+	//
+	// 		$this.css({
+	// 			'opacity' : calc,
+	// 			'transform': 'translate3d(0px, '+ calctransform2 +'px, 0px)'
+	// 		});
+	// 		if ( calc > '1' ) {
+	// 		  $this.css({ 'opacity': 1 });
+	// 		} else if ( calc < '0' ) {
+	// 		  $this.css({ 'opacity': 0 });
+	// 		 };
+	//
+	// });
+
+
+
+	var $el = $('.skroll');
 	var range = 300;
-	var speedParallax = 0.9;
-	var sectionHeight = sectionScrollContent.outerHeight();
-	sectionScroll.css({
-		'height' : sectionHeight + 150 + 'px'
-	});
-	sectionScrollWrapper.css({
-		'height' : sectionHeight + 150 + 'px'
-	});
 
-	$(window).on('scroll', function () {
+	$el.each(function () {
+			$this = $(this);
+			var speedParallax = $this.attr('data-speed');
 
-	    var scrollTop = $(this).scrollTop();
-	    var calc = 1 - (scrollTop / range);
-	    var calctransform = - scrollTop;
-			var calctransform2 = scrollTop * speedParallax;
-	    sectionScrollWrapper.css({
-				'opacity' : calc,
-				'transform': 'translate3d(0px, '+ calctransform +'px, 0px)'
+			$(window).scroll(function() {
+		    var scrollTop = $(this).scrollTop();
+		    var calc = 1 - (scrollTop / range);
+				var calctransform = scrollTop * speedParallax;
+				console.log($this);
+				$this.css({
+					'transform': 'translate(0px, '+ calctransform +'px)'
+				});
 			});
-			sectionScrollContent.css({
-				'transform': 'translate3d(0px, '+ calctransform2 +'px, 0px)'
-			});
-			if ( calc > '1' ) {
-	      sectionScrollWrapper.css({ 'opacity': 1 });
-	    } else if ( calc < '0' ) {
-	      sectionScrollWrapper.css({ 'opacity': 0 });
-	    };
-
 	});
+
 
 	/* DATA */
 
@@ -100,21 +123,22 @@ $(document).ready(function(){
     countSVG($elements);
     new Vivus('my-svg', {
     	type: 'delayed',
-		duration: 150,
-		animTimingFunction: Vivus.EASE_IN
+			duration: 150,
+			animTimingFunction: Vivus.EASE_IN
     });
     new Vivus('data-svg', {
     	type: 'delayed',
-		duration: 80,
-		animTimingFunction: Vivus.EASE_IN
+			duration: 80,
+			animTimingFunction: Vivus.EASE_IN
     });
 
-    /* parallax */
-	$('div[data-type="background"]').each(function(){
+    /* PARALLAX BACKGROUND IMAGE */
+
+		$('div[data-type="background"]').each(function(){
         var $bgobj = $(this); // assigning the object
 
         $(window).scroll(function() {
-            var yPos = -($(window).scrollTop() / $bgobj.data('speed'));
+            var yPos = -($(window).scrollTop() / $bgobj.data('parallax'));
 
             // Put together our final background position
             var coords = '50% '+ yPos + 'px';
