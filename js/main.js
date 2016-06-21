@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 
-	/* HEADER STICKY */
+/* ======================================= HEADER STICKY ========================================== */
 
 	var el_html = $('html'),
 			el_body = $('body'),
@@ -38,14 +38,14 @@ $(document).ready(function(){
 		onScrolling();
 	});
 
-	/* SCROLL ANIM */
+/* ========================================== SCROLL ANIM ========================================== */
 
 	// var sectionScroll = $('.section-anim-scroll');
 	// var sectionScrollWrapper = $('.section-anim-scroll .wrapper');
 	// var sectionScrollContent = $('.section-anim-scroll .container');
-	// 	var range = 300;
-	//var speedParallax = sectionScrollContent.attr('data-speed');
-	//var sectionHeight = sectionScrollContent.outerHeight();
+	// var range = 300;
+	// var speedParallax = sectionScrollContent.attr('data-speed');
+	// var sectionHeight = sectionScrollContent.outerHeight();
 	// sectionScroll.css({
 	// 	'height' : sectionHeight + 150 + 'px'
 	// });
@@ -75,7 +75,7 @@ $(document).ready(function(){
 	//
 	// });
 
-
+/* ========================================== SCROLL ANIM WITH ATTRIBUTE DATA-SPEED ========================================== */
 
 	var $el = $('.skroll');
 	var range = 300;
@@ -86,7 +86,6 @@ $(document).ready(function(){
 
 			$(window).scroll(function() {
 		    var scrollTop = $(this).scrollTop();
-		    var calc = 1 - (scrollTop / range);
 				var calctransform = scrollTop * speedParallax;
 				console.log($this);
 				$this.css({
@@ -96,28 +95,29 @@ $(document).ready(function(){
 	});
 
 
-	/* DATA */
+/* ========================================== DATA ========================================== */
 
 	var $elements = $('.wrapper-data');
-    function countSVG (elements) {
-        elements.each(function () {
-            var $circle = $(this).find('.percent');
-            var val = $(this).find('.number').attr('data-to');
-            if (isNaN(val)) {
-               val = 100;
-            } else {
-                var r = $circle.attr('r');
-                var c = Math.PI*(r*2);
 
-                if (val < 0) { val = 0;}
-                if (val > 100) { val = 100;}
+  function countSVG (elements) {
+      elements.each(function () {
+        var $circle = $(this).find('.percent');
+        var val = $(this).find('.number').attr('data-to');
+        if (isNaN(val)) {
+           val = 100;
+        } else {
+          var r = $circle.attr('r');
+          var c = Math.PI*(r*2);
 
-                var pct = ((100-val)/100)*c;
-                $circle.animate({
-                    strokeDashoffset:pct
-                }, 800);
-            }
-        });
+          if (val < 0) { val = 0;}
+          if (val > 100) { val = 100;}
+
+          var pct = ((100-val)/100)*c;
+          $circle.animate({
+              strokeDashoffset:pct
+          }, 800);
+        }
+      });
     };
 
     countSVG($elements);
@@ -132,7 +132,7 @@ $(document).ready(function(){
 			animTimingFunction: Vivus.EASE_IN
     });
 
-    /* PARALLAX BACKGROUND IMAGE */
+/* ========================================== PARALLAX BACKGROUND IMAGE ========================================== */
 
 		$('div[data-type="background"]').each(function(){
         var $bgobj = $(this); // assigning the object
