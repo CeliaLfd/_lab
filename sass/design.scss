@@ -1,5 +1,33 @@
+@keyframes fadeIn {
+	from { opacity:0; }
+	to { opacity:1; }
+}
+@keyframes transform {
+	from { transform: translateY(50px); }
+	to { transform: translateY(0); }
+}
+
 body, html {
 	height: 100%;
+}
+body {
+	opacity:0;
+  animation:fadeIn ease-in-out 1;
+  animation-fill-mode:forwards;
+  animation-duration:.8s;
+	&.move-up {
+		animation: transform ease-in-out 1, opacity ease-in-out 1;
+		animation-duration: .6s, .9s;
+		animation-fill-mode:forwards;
+		opacity: 0;
+	}
+	&.open {
+		&.move-up {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+
 }
 a, a:hover {
 	text-decoration: none;
@@ -8,6 +36,7 @@ a, a:hover {
 	padding: 40px 0;
 	text-align: center;
 	min-height: 80vh;
+	position: relative;
 	h2 {
 		font-weight: bold;
 		margin-bottom: 40px;
@@ -36,11 +65,11 @@ a, a:hover {
 		transform: translateY(0);
 	}
 }
-
 .header {
 	padding: 40px;
 	overflow: hidden;
-	background: #eee;
+	background: #333;
+	color: white;
 	font-weight: bold;
 	transition: all .2s ease;
 }
@@ -55,6 +84,47 @@ a, a:hover {
 	padding: 20px 40px;
 }
 
+/* SECTION ANIM SCROLL */
+
+.section-anim-scroll {
+	position: static;
+	z-index: initial;
+	margin: 0;
+  padding: 0;
+  border: 0;
+	.wrapper {
+		position: relative;
+		margin: 50px 0;
+		display: inline-block;
+		padding-right: 70px;
+	}
+	.block-img {
+		height: 650px;
+		width: 500px;
+		background: url('../img/img1.jpg');
+		background-size: cover;
+	}
+	.title {
+		font-weight: bold;
+		font-size: 80px;
+		position: absolute;
+		right: 0px;
+		top: 30px;
+	}
+	.block-infos {
+		position: absolute;
+		bottom: 50px;
+		right: 0;
+		padding: 30px;
+		border: 3px solid #333;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 24px;
+	}
+	.container {
+		width: 50%;
+	}
+}
 
 
 /* PARALLAX BG */
@@ -90,6 +160,7 @@ a, a:hover {
 	position: relative;
 	width: 200px;
 	height: 80px;
+	display: inline-block;
 	transition: background-color 0.3s ease;
 }
 .wrapper-transform .item {
@@ -149,14 +220,19 @@ a, a:hover {
 	box-shadow: inset 20px 0 #333;
 }
 .nav-hover {
-	font-weight: bold;
-	font-size: 18px;
-	display: inline-block;
+		font-weight: bold;
+		font-size: 18px;
+		display: inline-block;
+		a {
+			position: relative;
+			display: block;
+			margin: 5px 0;
+			overflow: hidden;
+		}
+}
+.nav-hover-full {
 	a {
 		color: #333;
-		position: relative;
-		display: block;
-		margin: 5px 0;
 		&:before {
 			content: attr(data-hover);
 			position: absolute;
@@ -194,14 +270,7 @@ a, a:hover {
   }
 }
 .nav-hover-animation {
-	font-weight: bold;
-	font-size: 18px;
-	display: inline-block;
-	li {}
 	a {
-		position: relative;
-		overflow: hidden;
-		display: inline-block;
 		padding: 4px 8px;
 		&:before {
 			content: ' ';
@@ -232,7 +301,26 @@ a, a:hover {
 			}
 		}
 	}
-
+}
+.nav-hover-transform {
+	span {
+		position: relative;
+		display: inline-block;
+		transition: transform .15s ease-in-out;
+		&:before {
+				content: attr(data-hover);
+				position: absolute;
+				transition: all .4s ease-in;
+				top: 100%;
+				color: #666;
+				transform: translate3d(0,0,0);
+		}
+	}
+	a:hover {
+		span {
+			transform: translateY(-100%);
+		}
+	}
 }
 .circle-hover {
 	li {
@@ -249,6 +337,8 @@ a, a:hover {
 			border-radius: 50%;
 			border: 2px solid #5f6a72;
 			transition: all 0.3s;
+			left: 0;
+			top: 0;
 		}
 		&:after {
 			content: "";
@@ -257,6 +347,8 @@ a, a:hover {
 	    height: 100%;
 	    border-radius: 50%;
 	    transform: scale(1);
+			left: 0;
+			top: 0;
 		}
 		&:hover {
 			&:after {
@@ -266,7 +358,69 @@ a, a:hover {
 				transition: all 0.6s;
 			}
 			&:before {
-				    transform: scale(0.95);
+				transform: scale(0.95);
+			}
+		}
+	}
+}
+
+/* FORM */
+
+.form-anim {
+	width: 60%;
+	margin: 0 auto;
+	.form-group {
+		position: relative;
+		width: 100%;
+		display: block;
+		margin-bottom: 40px;
+		&:hover {
+			&:after {
+				width: 100%;
+				margin-left: 0;
+			}
+		}
+		&:after {
+			content: "";
+			width: 0;
+			height: 1px;
+			background-color: rgb(170, 22, 53);
+			display: block;
+			transition: all 400ms ease;
+			margin-left: 50%;
+			position: absolute;
+			bottom: 0;
+		}
+		label {
+			color: #b8b5bd;
+	    font-size: 18px;
+	    font-weight: 400;
+	    letter-spacing: .5px;
+	    position: absolute;
+	    pointer-events: none;
+	    left: 0;
+	    top: 2px;
+	    transition: .2s ease all;
+		}
+		input {
+			width: 100%;
+			padding: 0 0 20px 2px;
+			border-top: 0;
+			border-left: 0;
+			border-right: 0;
+			border-bottom: 1px solid #aaa;
+			box-shadow: none;
+			border-radius: 0;
+			background: transparent;
+			color: #333;
+			&:focus, &:active {
+				outline: none;
+			}
+			&:focus~label {
+				top: -30px;
+				opacity: 1;
+				font-size: 12px;
+				color: rgb(170, 22, 53);
 			}
 		}
 	}

@@ -1,11 +1,13 @@
 $(document).ready(function(){
 
-	/* HEADER STICKY */
+
+/* ======================================= HEADER STICKY ========================================== */
 
 	var el_html = $('html'),
 			el_body = $('body'),
 			header = $('header');
 
+	el_body.addClass('open');
 	function menuIsStuck () {
 		var wScrollTop = $(window).scrollTop(),
 				classFound = el_html.hasClass('nav-is-stuck'),
@@ -36,48 +38,107 @@ $(document).ready(function(){
 		onScrolling();
 	});
 
-	/* DATA */
+/* ========================================== SCROLL ANIM ========================================== */
+
+	// var sectionScroll = $('.section-anim-scroll');
+	// var sectionScrollWrapper = $('.section-anim-scroll .wrapper');
+	// var sectionScrollContent = $('.section-anim-scroll .container');
+	// var range = 300;
+	// var speedParallax = sectionScrollContent.attr('data-speed');
+	// var sectionHeight = sectionScrollContent.outerHeight();
+	// sectionScroll.css({
+	// 	'height' : sectionHeight + 150 + 'px'
+	// });
+	// sectionScrollWrapper.css({
+	// 	'height' : sectionHeight + 150 + 'px'
+	// });
+	// $(window).on('scroll', function () {
+	//
+	// 		var scrollTop = $(this).scrollTop();
+	// 		var calc = 1 - (scrollTop / range);
+	// 		var calctransform = - scrollTop;
+	// 		var calctransform2 = scrollTop * speedParallax;
+	// 		sectionScrollWrapper.css({
+	// 		 	'opacity' : calc,
+	// 			'transform': 'translate3d(0px, '+ calctransform +'px, 0px)'
+	// 		});
+	//
+	// 		$this.css({
+	// 			'opacity' : calc,
+	// 			'transform': 'translate3d(0px, '+ calctransform2 +'px, 0px)'
+	// 		});
+	// 		if ( calc > '1' ) {
+	// 		  $this.css({ 'opacity': 1 });
+	// 		} else if ( calc < '0' ) {
+	// 		  $this.css({ 'opacity': 0 });
+	// 		 };
+	//
+	// });
+
+/* ========================================== SCROLL ANIM WITH ATTRIBUTE DATA-SPEED ========================================== */
+
+	var $el = $('.skroll');
+	var range = 300;
+
+	$el.each(function () {
+			$this = $(this);
+			var speedParallax = $this.attr('data-speed');
+
+			$(window).scroll(function() {
+		    var scrollTop = $(this).scrollTop();
+				var calctransform = scrollTop * speedParallax;
+				console.log($this);
+				$this.css({
+					'transform': 'translate(0px, '+ calctransform +'px)'
+				});
+			});
+	});
+
+
+/* ========================================== DATA ========================================== */
 
 	var $elements = $('.wrapper-data');
-    function countSVG (elements) {
-        elements.each(function () {
-            var $circle = $(this).find('.percent');
-            var val = $(this).find('.number').attr('data-to');
-            if (isNaN(val)) {
-               val = 100;
-            } else {
-                var r = $circle.attr('r');
-                var c = Math.PI*(r*2);
 
-                if (val < 0) { val = 0;}
-                if (val > 100) { val = 100;}
+  function countSVG (elements) {
+      elements.each(function () {
+        var $circle = $(this).find('.percent');
+        var val = $(this).find('.number').attr('data-to');
+        if (isNaN(val)) {
+           val = 100;
+        } else {
+          var r = $circle.attr('r');
+          var c = Math.PI*(r*2);
 
-                var pct = ((100-val)/100)*c;
-                $circle.animate({
-                    strokeDashoffset:pct
-                }, 800);
-            }
-        });
+          if (val < 0) { val = 0;}
+          if (val > 100) { val = 100;}
+
+          var pct = ((100-val)/100)*c;
+          $circle.animate({
+              strokeDashoffset:pct
+          }, 800);
+        }
+      });
     };
 
     countSVG($elements);
     new Vivus('my-svg', {
     	type: 'delayed',
-		duration: 150,
-		animTimingFunction: Vivus.EASE_IN
+			duration: 150,
+			animTimingFunction: Vivus.EASE_IN
     });
     new Vivus('data-svg', {
     	type: 'delayed',
-		duration: 80,
-		animTimingFunction: Vivus.EASE_IN
+			duration: 80,
+			animTimingFunction: Vivus.EASE_IN
     });
 
-    /* parallax */
-	$('div[data-type="background"]').each(function(){
+/* ========================================== PARALLAX BACKGROUND IMAGE ========================================== */
+
+		$('div[data-type="background"]').each(function(){
         var $bgobj = $(this); // assigning the object
 
         $(window).scroll(function() {
-            var yPos = -($(window).scrollTop() / $bgobj.data('speed'));
+            var yPos = -($(window).scrollTop() / $bgobj.data('parallax'));
 
             // Put together our final background position
             var coords = '50% '+ yPos + 'px';
